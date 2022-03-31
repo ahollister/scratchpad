@@ -1,13 +1,66 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SCROLLBARS DARKMODE */
+html,
+html * {
+  scrollbar-color: var(--color-slate-200) var(--color-white);
+  scrollbar-width: thin;
+}
+html.dark,
+html.dark * {
+  scrollbar-color: var(--color-slate-600) var(--color-slate-900);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html.dark::-webkit-scrollbar,
+html.dark *::-webkit-scrollbar {
+  display: none;
+}
+
+/* POSTS */
+article {
+  @apply font-light;
+}
+article header h2 {
+  @apply text-3xl mb-8 underline font-bold;
+}
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  @apply text-3xl mb-3 mt-4;
+}
+.post-content h2 {
+  @apply text-xl;
+}
+.post-content h3 {
+  @apply text-lg;
+}
+.post-content a {
+  @apply text-blue-500 dark:text-blue-300 underline hover:no-underline;
+}
+pre {
+  @apply bg-orange-50 dark:bg-zinc-800 overflow-scroll p-2 my-2 rounded;
+}
+p {
+  @apply mb-4;
+}
+ul {
+  @apply list-disc mb-4 pl-4;
+}
+blockquote {
+  @apply my-8 pl-4 border-l-2 italic;
+}
+table {
+  @apply border text-sm;
+}
+table th,
+table td {
+  @apply text-left p-1 border;
+}
+strong {
+  @apply font-bold;
+}
+svg {
+  @apply pointer-events-none;
 }
