@@ -5,6 +5,9 @@
 .w-md-editor {
   @apply shadow-none dark:bg-zinc-900 dark:text-white;
 }
+.language-markdown.w-md-editor-text-pre {
+  @apply overflow-auto;
+}
 .w-md-editor-preview {
   @apply shadow-none dark:bg-zinc-900 dark:text-white;
 }
